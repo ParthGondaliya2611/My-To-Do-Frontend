@@ -9,7 +9,7 @@ const App = () => {
 
   const getitem = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/v1/note/get-note");
+      const res = await fetch("https://my-to-do-back-end.vercel.app/get-note");
       const data = await res.json();
       setitem(data.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const App = () => {
     setUpdate(true);
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/note/updateget-note/${id}`
+        `https://my-to-do-back-end.vercel.app/updateget-note/${id}`
       );
       const data = await res.json();
       setinput(data.data[0].title);
@@ -41,7 +41,7 @@ const App = () => {
 
   const createNote = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/note/create-note`, {
+      const res = await fetch(`https://my-to-do-back-end.vercel.app/create-note`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const App = () => {
     console.log("sf", id);
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/note/update-note/${id} `,
+        `https://my-to-do-back-end.vercel.app/update-note/${id} `,
         {
           method: "PUT",
           headers: {
@@ -85,7 +85,7 @@ const App = () => {
   const DeleteNote = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/note/delete-note/${id}`,
+        `https://my-to-do-back-end.vercel.app/delete-note/${id}`,
         {
           method: "DELETE",
         }
